@@ -9,16 +9,17 @@ function testsOfFunction(numberFunction, wordsToTest) {
   const words = wordsToTest
     ? wordsToTest
     : [
-        "sapato",
+        "Sapato",
         "abacate",
         "shampoo",
-        "estrogonofe",
+        "estrOgonofe",
         "sorvete",
-        "anagrama",
+        "anaGrama",
         "aaaa",
         "asdhasioudhasioufjioe9dghsio",
         "aabb",
         "aabbccc",
+        "AaaBbcCc",
       ];
 
   words.forEach((word) => {
@@ -48,7 +49,7 @@ function testsOfFunction(numberFunction, wordsToTest) {
  * @returns {string}
  */
 function findFirstLetterNotRepeated(word) {
-  const arrayWord = word.split("");
+  const arrayWord = word.toLocaleLowerCase().split("");
   const uniqueLetter = arrayWord
     .map((letterWord) => {
       return arrayWord.filter((letter) => letter === letterWord);
@@ -57,7 +58,8 @@ function findFirstLetterNotRepeated(word) {
   return !!uniqueLetter ? uniqueLetter : "All the letters are repeated";
 }
 
-// testsOfFunction(1);
+console.log(" -------- FUNCTION 1 -------- ");
+testsOfFunction(1);
 // #endregion first function
 
 // #region second function
@@ -67,7 +69,7 @@ function findFirstLetterNotRepeated(word) {
  * @returns {string}
  */
 function findFirstLetterNotRepeated2(word) {
-  const arrayWord = word.split("");
+  const arrayWord = word.toLocaleLowerCase().split("");
 
   const indexFirstNotRepeatedLetter = arrayWord
     .map((letter) => {
@@ -81,7 +83,8 @@ function findFirstLetterNotRepeated2(word) {
   return arrayWord[indexFirstNotRepeatedLetter];
 }
 
-// testsOfFunction(2);
+console.log(" -------- FUNCTION 2 -------- ");
+testsOfFunction(2);
 // #endregion second function
 
 // #region third function
@@ -91,7 +94,7 @@ function findFirstLetterNotRepeated2(word) {
  * @returns {string}
  */
 function findFirstLetterNotRepeated3(word) {
-  const arrayWord = word.split("");
+  const arrayWord = word.toLocaleLowerCase().split("");
   const uniqueLetters = [];
   arrayWord.forEach((letter) => {
     if (arrayWord.indexOf(letter) === arrayWord.lastIndexOf(letter)) {
@@ -104,5 +107,10 @@ function findFirstLetterNotRepeated3(word) {
   return uniqueLetters[0];
 }
 
+console.log(" -------- FUNCTION 3 -------- ");
 testsOfFunction(3);
+// testsOfFunction(3, [
+//   "sapatenis",
+//   "luxcolor a tinta da pintura inteligente",
+// ]);
 // #endregion third function
