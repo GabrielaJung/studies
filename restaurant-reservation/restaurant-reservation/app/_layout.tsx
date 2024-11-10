@@ -4,12 +4,16 @@ import {
   ThemeProvider,
 } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import 'react-native-reanimated';
-// import { logoIcon } from '../assets/images/logoIcon';
+
+import Header from '@/components/navigation/Header';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { FormNewReservation } from '@/components/forms/FormNewReservation';
+
+import React from 'react';
+import { StyleSheet } from 'react-native';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -32,16 +36,20 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <header>
-        logo
-      </header>
-      <main>aqui forms</main>
-      <footer>aqui botoes</footer>
+      <Header title='Reservar horário' />
+      <main style={styles.main}>
+        <FormNewReservation />
+      </main>
+      <footer></footer>
     </ThemeProvider>
   );
 }
 
-// <Stack>
-//   <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-//   <Stack.Screen name="+not-found" />
-// </Stack>
+const styles = StyleSheet.create({
+  main: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '1rem',
+    alignItems: 'center',
+  },
+});

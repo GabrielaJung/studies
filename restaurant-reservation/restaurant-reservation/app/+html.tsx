@@ -1,6 +1,8 @@
 import { ScrollViewStyleReset } from 'expo-router/html';
 import { type PropsWithChildren } from 'react';
 
+import React from 'react';
+
 /**
  * This file is web-only and used to configure the root HTML for every web page during static rendering.
  * The contents of this function only run in Node.js environments and do not have access to the DOM or browser APIs.
@@ -39,11 +41,14 @@ const responsiveBackground = `
   --red: #F44F4F;
   --primary: #FFB000;
   --color: #181818;
+  --color-shade: ##333;
+  --shadow-color: #18181824;
   --secondary: #929292;
   --stroke: #D0D0D0;
   --tint: #D9D9D9;
   --shade: #EFEFEF;
-  --background: #FFF
+  --background: #FFF;
+  --border-radius: 5px;
 }
 
 @media (prefers-color-scheme: dark){
@@ -51,6 +56,7 @@ const responsiveBackground = `
   --red: #F66F6F;
   --primary: #FFB000;
   --color: #FFF;
+  --shador-color: #FFFFFF24
   --secondary: #929292;
   --stroke: #D0D0D0;
   --tint: #D9D9D9;
